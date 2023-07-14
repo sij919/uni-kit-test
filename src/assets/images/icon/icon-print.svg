@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="그룹_7728" data-name="그룹 7728" transform="translate(-637 -2621)">
+    <rect id="사각형_3200" data-name="사각형 3200" width="18" height="18" transform="translate(637 2621)" fill="rgba(255,255,255,0)"/>
+    <g id="ic_print_m_normal" transform="translate(-471 2508)">
+      <g id="사각형_3862" data-name="사각형 3862">
+        <path id="패스_2993" data-name="패스 2993" d="M1,0H9a1,1,0,0,1,1,1V5H0V1A1,1,0,0,1,1,0Z" transform="translate(1112 114)" fill="none"/>
+        <path id="패스_2994" data-name="패스 2994" d="M1,.5H9a.5.5,0,0,1,.5.5V4.5H.5V1A.5.5,0,0,1,1,.5Z" transform="translate(1112 114)" fill="none" stroke="#7b7b7b" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <path id="빼기_181" data-name="빼기 181" d="M10076,8329h-3a1,1,0,0,1-1-1v-6a1,1,0,0,1,1-1h14a1,1,0,0,1,1,1v6a1,1,0,0,1-1,1h-2v-1h2v-6h-14v6h3Z" transform="translate(-8963 -8203)" fill="#7b7b7b"/>
+      <g id="사각형_3864" data-name="사각형 3864" transform="translate(1112 123)" fill="none" stroke="#7b7b7b" stroke-miterlimit="10" stroke-width="1">
+        <rect width="10" height="7" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="9" height="6" rx="0.5" fill="none"/>
+      </g>
+      <rect id="사각형_3865" data-name="사각형 3865" width="6" height="1" rx="0.5" transform="translate(1114 125)" fill="#7b7b7b"/>
+      <rect id="사각형_3866" data-name="사각형 3866" width="6" height="1" rx="0.5" transform="translate(1114 127)" fill="#7b7b7b"/>
+      <circle id="타원_690" data-name="타원 690" cx="0.5" cy="0.5" r="0.5" transform="translate(1120 120)" fill="#7b7b7b"/>
+      <circle id="타원_691" data-name="타원 691" cx="0.5" cy="0.5" r="0.5" transform="translate(1122 120)" fill="#7b7b7b"/>
+    </g>
+  </g>
+</svg>

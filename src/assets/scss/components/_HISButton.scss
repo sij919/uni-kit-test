@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+@import "@/assets/scss/tools/extends/button";
+@import "@/assets/scss/tools/mixins/button";
+
+$icon-bg-path: '@/assets/images/icon/';
+$icon-name: 'arrowup_18', 'arrowdown_18', 'arrowleft_18', 'arrowright_18', 'search_18', 'trashcan_18', 'setting_18', 'attach', 'search-document', 'calendar', 'document', 'note', 'reset', 'refresh', 'download', 'excel-save', 'excel-upload', 'edit', 'maximize', 'add', 'minus', 'close', 'view-list', 'print', 'filter', 'graph', 'save', 'selective';
+$icon-position: 'left', 'right', 'top', 'bottom';
+
+.btn {
+  border-radius: 2px;
+  box-sizing: border-box;
+
+  // Size
+  &.s-small {
+    min-width: 42px;
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  &.s-medium {
+    min-width: 46px;
+    min-height: 26px;
+    padding: 0 12px;
+    font-size: 14px;
+    &[type="icon"] {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
+      padding: 3px;
+      border-radius: 3px;
+      border: 1px solid $point-gray-light;
+    }
+  }
+
+  &.s-large {
+    min-width: 54px;
+    min-height: 30px;
+    padding: 0 16px;
+    font-size: 16px;
+    &[type="icon"] {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      padding: 2px;
+      border-radius: 4px;
+      border: 1px solid $point-gray-light;
+    }
+  }
+
+  // Icon + Text
+  @each $position in $icon-position {
+    &[type="icon"][position=#{$position}] {
+      > .icon-default {
+        @include icon-bg('icon-check-default.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        border: 1px solid $point-gray-light;
+        color: $point-gray-dark;
+      }
+      > .icon-default.icon-over {
+        @include icon-bg('icon-check-over.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        border: 1px solid $point-blue-medium;
+        color: $point-blue-medium;
+        outline: 0;
+      }
+      > .icon-default.icon-click {
+        @include icon-bg('icon-check-click.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        background-color: $btn-click-create;
+        border: 1px solid $point-gray-light;
+        color: $point-gray-dark;
+      }
+      > .icon-default.icon-disable {
+        @include icon-bg('icon-check-disable.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        background-color: $btn-disable;
+        border: 0;
+        color: $point-gray-medium;
+      }
+      > .icon-default.icon-over.icon-click {
+        @include icon-bg('icon-check-default.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        background-color: $point-white;
+        border: 1px solid $point-gray-light;
+        color: $point-gray-dark;
+        &:hover, &:focus {
+          @include icon-bg('icon-check-over.svg?url', center #{$position} 8px, 14px);
+          height: 100%;
+          border: 1px solid $point-blue-medium;
+          color: $point-blue-medium;
+          outline: 0;
+        }
+        &:active {
+          @include icon-bg('icon-check-click.svg?url', center #{$position} 8px, 14px);
+          height: 100%;
+          background-color: $btn-click-create;
+          border: 1px solid $point-gray-light;
+          color: $point-gray-dark;
+        }
+      }
+
+      &:disabled {
+        @include icon-bg('icon-check-disable.svg?url', center #{$position} 8px, 14px);
+        height: 100%;
+        background-color: $btn-disable;
+        border: 0;
+        color: $point-gray-medium;
+      }
+
+      @each $name in $icon-name {
+        &.#{$name} {
+          @include icon-bg('icon-' + $name + '.svg?url', center #{$position} 8px, 14px);
+          border: 1px solid $point-gray-light;
+          color: $point-gray-dark;
+        }
+      }
+    }
+  }
+
+  &[type="icon"] {
+    &[position="left"],
+    &[position="right"],
+    &[position="top"],
+    &[position="bottom"] {
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    &[position="left"] > div[class^="icon-"],
+    &[position="right"] > div[class^="icon-"],
+    &[position="top"] > div[class^="icon-"],
+    &[position="bottom"] > div[class^="icon-"] {
+      display: flex;
+      align-items: center;
+    }
+    &[position="left"] > .img-icon,
+    &[position="right"] > .img-icon,
+    &[position="top"] > .img-icon,
+    &[position="bottom"] > .img-icon {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 8px;
+      border: 1px solid $point-gray-light;
+      color: $point-gray-dark;
+    }
+    &[position="left"] > .img-icon > img,
+    &[position="right"] > .img-icon > img,
+    &[position="top"] > .img-icon > img,
+    &[position="bottom"] > .img-icon > img {
+      width: 14px;
+      height: 14px;
+    }
+    &[position="left"] > .img-icon:hover,
+    &[position="left"] > .img-icon:focus,
+    &[position="right"] > .img-icon:hover,
+    &[position="right"] > .img-icon:focus,
+    &[position="top"] > .img-icon:hover,
+    &[position="top"] > .img-icon:focus,
+    &[position="bottom"] > .img-icon:hover,
+    &[position="bottom"] > .img-icon:focus {
+      border: 1px solid $point-blue-medium;
+      color: $point-blue-medium;
+      outline: 0;
+    }
+    &[position="left"] > .img-icon:active,
+    &[position="right"] > .img-icon:active,
+    &[position="top"] > .img-icon:active,
+    &[position="bottom"] > .img-icon:active {
+      background-color: $btn-click-create;
+      border: 1px solid $point-gray-light;
+      color: $point-gray-dark;
+    }
+    &[position="left"] > .img-icon.disable,
+    &[position="right"] > .img-icon.disable,
+    &[position="top"] > .img-icon.disable,
+    &[position="bottom"] > .img-icon.disable {
+      background-color: $btn-disable;
+      border: 0;
+      color: $point-gray-medium;
+      cursor: pointer;
+    }
+  }
+
+  &[type="icon"][position="left"], &[type="icon"][position="right"] {
+    display: flex;
+    align-items: center;
+    height: 24px;
+  }
+
+  &[type="icon"][position="left"] {
+    > div[class^="icon-"] {
+      padding-left: 27px;
+      padding-right: 8px;
+    }
+    > .img-icon > img {
+      margin-right: 4px;
+    }
+  }
+
+  &[type="icon"][position="right"] {
+    > div[class^="icon-"] {
+      padding-left: 8px;
+      padding-right: 27px;
+    }
+    > .img-icon {
+      flex-direction: row-reverse;
+    }
+    > .img-icon > img {
+      margin-left: 4px;
+    }
+  }
+
+  &[type="icon"][position="top"], &[type="icon"][position="bottom"] {
+    height: 52px;
+    > div[class^="icon-"] {
+      min-width: 54px;
+      justify-content: center;
+    }
+    > .img-icon {
+      min-width: 54px;
+    }
+  }
+
+  &[type="icon"][position="top"] {
+    > div[class^="icon-"] {
+      align-items: flex-end;
+      padding: 0 8px 3px 8px;
+    }
+    > .img-icon {
+      flex-direction: column;
+    }
+    > .img-icon > img {
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &[type="icon"][position="bottom"] {
+    > div[class^="icon-"] {
+      align-items: flex-start;
+      padding: 5px 8px 0 8px;
+    }
+    > .img-icon {
+      flex-direction: column-reverse;
+    }
+    > .img-icon > img {
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+  }
+
+  // State, Size, Color
+  &.is-default {
+    &.is-create {
+      @extend %default-create-style;
+    }
+    &.is-create:hover, &.is-create:focus {
+      @extend %over-create-style;
+    }
+    &.is-create:active {
+      @extend %click-create-style;
+    }
+    &.is-read {
+      @extend %default-read-style;
+    }
+    &.is-read:hover, &.is-read:focus {
+      @extend %over-read-style;
+    }
+    &.is-read:active {
+      @extend %click-read-style;
+    }
+    &.is-update {
+      @extend %default-update-style;
+    }
+    &.is-update:hover, &.is-update:focus {
+      @extend %over-update-style;
+    }
+    &.is-update:active {
+      @extend %click-update-style;
+    }
+    &.is-delete {
+      @extend %default-delete-style;
+    }
+    &.is-delete:hover, &.is-delete:focus {
+      @extend %over-delete-style;
+    }
+    &.is-delete:active {
+      @extend %click-delete-style;
+    }
+    &:disabled {
+      @extend %disable-style;
+      cursor: not-allowed;
+    }
+  }
+  &.is-focus {
+    &.is-create {
+      @extend %over-create-style;
+    }
+    &.is-read {
+      @extend %over-read-style;
+    }
+    &.is-update {
+      @extend %over-update-style;
+    }
+    &.is-delete {
+      @extend %over-delete-style;
+    }
+  }
+
+  &.is-click {
+    &.is-create {
+      @extend %click-create-style;
+    }
+    &.is-read {
+      @extend %click-read-style;
+    }
+    &.is-update {
+      @extend %click-update-style;
+    }
+    &.is-delete {
+      @extend %click-delete-style;
+    }
+  }
+
+  // Icon
+  @each $name in $icon-name {
+
+    &.s-medium > .#{$name} {
+      @include icon-bg('icon-' + $name + '.svg?url', 50%, 18px);
+      height: 100%;
+    }
+    &.s-large > .#{$name} {
+      @include icon-bg('icon-' + $name + '.svg?url', 50%, 20px);
+      height: 100%;
+    }
+  }
+
+  &.s-medium > .arrow-up {
+    @include icon-bg('icon-arrowup_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .arrow-down {
+    @include icon-bg('icon-arrowdown_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .arrow-left {
+    @include icon-bg('icon-arrowleft_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .arrow-right {
+    @include icon-bg('icon-arrowright_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .search {
+    @include icon-bg('icon-search_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .trashcan {
+    @include icon-bg('icon-trashcan_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+  &.s-medium > .setting {
+    @include icon-bg('icon-setting_18.svg?url', 50%, 18px);
+    height: 100%;
+  }
+
+  &.s-large > .arrow-up {
+    @include icon-bg('icon-arrowup_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .arrow-down {
+    @include icon-bg('icon-arrowdown_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .arrow-left {
+    @include icon-bg('icon-arrowleft_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .arrow-right {
+    @include icon-bg('icon-arrowright_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .search {
+    @include icon-bg('icon-search_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .trashcan {
+    @include icon-bg('icon-trashcan_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+  &.s-large > .setting {
+    @include icon-bg('icon-setting_18.svg?url', 50%, 20px);
+    height: 100%;
+  }
+
+}

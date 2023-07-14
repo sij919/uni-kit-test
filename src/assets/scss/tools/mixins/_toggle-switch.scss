@@ -1,0 +1,67 @@
+// =====================================================================================
+// MixIn
+// =====================================================================================
+
+@mixin switch-size($size, $lineHeight) {
+  .toggle-switch-input {
+    width: calc(($size * 2) + ($size * 0.5)) + px;
+    height: calc($size * $lineHeight) + px;
+    border-radius: calc(($size * $lineHeight) / 2) + px;
+    &:checked {
+      +.toggle-switch-label::after {
+        left: calc(($size) + ($size * 0.16)) + px;
+      }
+    }
+    + .toggle-switch-label {
+      font-size: $size + px;
+      line-height: $lineHeight;
+      padding-left: calc(($size * 2) + ($size * 0.5) + ($size * 0.5)) + px;
+
+      &::after {
+        left: calc(($size) - ($size * 0.84)) + px;
+        width: calc(($size) + ($size * 0.16)) + px;
+        height: calc(($size) + ($size * 0.16)) + px;
+      }
+    }
+  }
+}
+
+@mixin switch-on-off-out-size($size, $font) {
+  .toggle-switch-input {
+    + .toggle-switch-label::before {
+      width: calc(($size * 2) + ($size * 0.5)) + px;
+      left: calc(($size) - ($size * 0.84)) + px;
+      font-size: $font + px;
+    }
+  }
+}
+
+@mixin switch-on-off-in-size($size, $font) {
+  .toggle-switch-input {
+    +.toggle-switch-label::after {
+      left: calc(($size) - ($size * 0.84)) + px;
+      width: calc(($size) + ($size * 0.16)) + px;
+      height: calc(($size) + ($size * 0.16)) + px;
+      font-size: $font + px;
+    }
+  }
+}
+
+@mixin switch-color($color) {
+  &.is- {
+    &hover:hover {
+      .toggle-switch-input {
+        box-shadow: 0 0 5px rgba($color, 0.9);
+      }
+    }
+  }
+  .toggle-switch-input {
+    &:checked {
+      background-color: $color;
+    }
+    &:focus-visible {
+      box-shadow: 0 0 5px rgba($color, 0.9);
+    }
+  }
+}
+

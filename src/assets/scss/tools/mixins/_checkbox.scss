@@ -1,0 +1,86 @@
+// =====================================================================================
+// MixIn
+// =====================================================================================
+
+@mixin checkbox-size($size) {
+  input[type='checkbox'] {
+    width: ($size + 6px);
+    height: ($size + 6px);
+  }
+
+  label {
+    font-size: $size;
+
+    svg {
+      width: ($size + 6px);
+      height: ($size + 6px);
+      top: 0;
+    }
+
+    &::before {
+      width: ($size + 6px);
+      height: ($size + 6px);
+      margin-right: ($size * 0.4);
+    }
+  }
+
+  input[type='checkbox']:hover,
+  input[type='checkbox']:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(64, 0, 255, 0.461);
+    width: ($size + 6px);
+    height: ($size + 6px);
+    position: absolute;
+    top: -1px;
+  }
+
+  &.is-xsmall {
+    input[type='checkbox']:hover,
+    input[type='checkbox']:focus {
+      top: 1px;
+    }
+    .checkbox-icon {
+      top: 1px;
+    }
+  }
+  &.is-small {
+    input[type='checkbox']:hover,
+    input[type='checkbox']:focus {
+      top: 0;
+    }
+    .checkbox-icon {
+      top: 1px;
+    }
+  }
+  &.is-large {
+    input[type='checkbox']:hover,
+    input[type='checkbox']:focus {
+      top: -1px;
+    }
+    .checkbox-icon {
+      top: 0;
+    }
+  }
+  &.is-xlarge {
+    input[type='checkbox']:hover,
+    input[type='checkbox']:focus {
+      top: -1px;
+    }
+    .checkbox-icon {
+      top: 0;
+    }
+  }
+}
+
+@mixin checkbox-color($color) {
+  input[type='checkbox']:checked+label {
+    path {
+      fill: #fff;
+    }
+
+    &::before {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}

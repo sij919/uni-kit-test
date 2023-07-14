@@ -1,0 +1,12 @@
+@mixin sprite-retina($sprite, $num) {
+  $sprite-offset-x: calc(nth($sprite, 3) / $num);
+  $sprite-offset-y: calc(nth($sprite, 4) / $num);
+  $sprite-width: calc(nth($sprite, 5) / $num);
+  $sprite-height: calc(nth($sprite, 6) / $num);
+  $sprite-total-width: calc(nth($sprite, 7) / $num);
+  $sprite-total-height: calc(nth($sprite, 8) / $num);
+  width: $sprite-width;
+  height: $sprite-height;
+  background-size: $sprite-total-width $sprite-total-height;
+  background-position: $sprite-offset-x $sprite-offset-y;
+}

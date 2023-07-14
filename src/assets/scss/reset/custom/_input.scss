@@ -1,0 +1,52 @@
+label {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input {
+  box-sizing: border-box;
+  appearance: none;
+  &:focus-visible {
+    outline: unset;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: none !important;
+    + label {
+      cursor: not-allowed;
+    }
+  }
+}
+
+input[type='text'] {
+  border: 0;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+textarea {
+  overflow: auto;
+}

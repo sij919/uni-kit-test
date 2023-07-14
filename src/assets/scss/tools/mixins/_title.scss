@@ -1,0 +1,65 @@
+// =====================================================================================
+// Variable
+// =====================================================================================
+
+$table-font-size: 12px;
+$table-title-scale: 1.2;
+$table-line-height: 1.3;
+
+$weight-normal: 400;
+$weight-medium: 700;
+
+// table font scale
+$table-title-h3: $table-font-size;
+$table-title-h2: round($table-title-h3 * $table-title-scale);
+$table-title-h1: round($table-title-h2 * $table-title-scale);
+
+// =====================================================================================
+// MixIn
+// =====================================================================================
+
+// th, td 정렬
+@mixin table-item-align($direction) {
+  tr {
+    &.th-align-#{$direction} th {
+      text-align: $direction;
+    }
+    &.td-align-#{$direction} th {
+      text-align: $direction;
+    }
+  }
+}
+
+// th 배경색
+@mixin th-bg-color($color) {
+  tr.th-bg-#{"" + $color} {
+    th {
+      @if $color == grey {
+        background: #eee;
+      } @else if $color == pink {
+        background: #fff2f4;
+      } @else if $color == blue {
+        background: #ededff;
+      } @else if $color == green {
+        background: #ddeadd;
+      }
+    }
+  }
+}
+
+// td 배경색
+@mixin td-bg-color($color) {
+  tr.td-bg-#{"" + $color} {
+    td {
+      @if $color == grey {
+        background: #fcfcfc;
+      } @else if $color == pink {
+        background: #fff7f8;
+      } @else if $color == blue {
+        background: #f7f7fe;
+      } @else if $color == green {
+        background: #fbfffb;
+      }
+    }
+  }
+}

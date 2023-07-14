@@ -1,0 +1,513 @@
+/* ================================================================================== */
+/* [ Title            ] UI GRID
+/* [ Author           ] 이지형
+/* ================================================================================== */
+
+// =====================================================================================
+// SASS 버전 호환
+// =====================================================================================
+@use "sass:math";
+
+// =====================================================================================
+// Responsive Breakpoint
+// =====================================================================================
+$screen-wide: 1920px;       // (w)와이드
+$screen-desktop: 1360px;    // (d)데스크탑
+$screen-tablet: 860px;      // (t)태블릿
+$screen-mobile: 480px;      // (m)모바일
+
+// =====================================================================================
+// Gridsystem
+// =====================================================================================
+$column: 12;
+
+// Mobile
+$mobile-column: 4;                                            // 컬럼
+$mobile-gutter: 6px;                                          // 거터
+$mobile-margin: 15px;                                         // 마진
+$mobile-max-width: $screen-tablet - ($mobile-margin * 2);     // 최대폭
+
+// Tablet
+$tablet-column: 8;                                            // 컬럼
+$tablet-gutter: 8px;                                          // 거터
+$tablet-margin: 20px;                                         // 마진
+$tablet-max-width: $screen-tablet - ($tablet-margin * 2);     // 최대폭
+
+// Desktop
+$desktop-column: 12;                                          // 컬럼
+$desktop-gutter: 10px;                                        // 거터
+$desktop-margin: 30px;                                        // 마진
+$desktop-max-width: $screen-desktop - ($desktop-margin * 2);  // 최대폭
+
+// Desktop
+$wide-column: 14;                                             // 컬럼
+$wide-gutter: 12px;                                           // 거터
+$wide-margin: 40px;                                           // 마진
+$wide-max-width: $screen-wide - ($wide-margin * 2);           // 최대폭
+
+
+// =====================================================================================
+// Function
+// =====================================================================================
+@function col($number) {
+  @return (math.div(100%, $column)) * $number;
+}
+
+@function col-w($number) {
+  @return (math.div(100%, $wide-column)) * $number;
+}
+
+@function col-d($number) {
+  @return (math.div(100%, $desktop-column)) * $number;
+}
+
+@function col-t($number) {
+  @return (math.div(100%, $tablet-column)) * $number;
+}
+
+@function col-m($number) {
+  @return (math.div(100%, $mobile-column)) * $number;
+}
+
+
+// =====================================================================================
+// Mixin
+// =====================================================================================
+@mixin col-($col) {
+  width: col($col);
+  flex: 0 0 auto;
+}
+@mixin col-m($col) {
+  width: col-m($col);
+  flex: 0 0 auto;
+}
+@mixin col-t($col) {
+  width: col-t($col);
+  flex: 0 0 auto;
+}
+@mixin col-d($col) {
+  width: col-d($col);
+  flex: 0 0 auto;
+}
+@mixin col-w($col) {
+  width: col-w($col);
+  flex: 0 0 auto;
+}
+
+@mixin mr-($col) {
+  margin-right: col($col);
+}
+@mixin mr-m($col) {
+  margin-right: col($col);
+}
+@mixin mr-t($col) {
+  margin-right: col($col);
+}
+@mixin mr-d($col) {
+  margin-right: col($col);
+}
+@mixin mr-w($col) {
+  margin-right: col($col);
+}
+
+@mixin ml-($col) {
+  margin-left: col($col);
+}
+@mixin ml-m($col) {
+  margin-left: col($col);
+}
+@mixin ml-t($col) {
+  margin-left: col($col);
+}
+@mixin ml-d($col) {
+  margin-left: col($col);
+}
+@mixin ml-w($col) {
+  margin-left: col($col);
+}
+
+// =====================================================================================
+// Reset
+// =====================================================================================
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+// =====================================================================================
+// Styles
+// =====================================================================================
+.grid-container {
+  margin: 0 auto;
+  max-width: 1360px;
+  padding: 0 $desktop-margin;
+}
+
+.grid-container-fluid {
+  width: 100%;
+  padding: 0 $desktop-margin;
+}
+
+@mixin col-gutter($gutter) {
+  .row {
+    [class*="col"] {
+      padding: $gutter;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 24px;
+
+  [class*="col"] {
+    width: 100%;
+    padding: $desktop-gutter;
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1 0;
+    border: 1px solid #000;
+  }
+
+  [class*="col-0"] {
+    display: none;
+  }
+
+  .col {
+    @for $i from 1 through $column {
+      &-#{$i} { @include col-($i); }
+    }
+  }
+
+  .suffix {
+    @for $i from 1 through $column {
+      &-#{$i} { @include mr-($i); }
+    }
+  }
+
+  .prefix {
+    @for $i from 1 through $column {
+      &-#{$i} { @include ml-($i); }
+    }
+  }
+
+  .gutter-no {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .gutter-suffix-no {
+    padding-right: 0 !important;
+  }
+  .gutter-prefix-no {
+    padding-left: 0 !important;
+  }
+}
+
+
+// =====================================================================================
+// [추후 삭제] 그리드 배경
+// =====================================================================================
+.before-no::before {
+  display: none !important;
+}
+
+.after-no::after {
+  display: none !important;
+}
+
+.row {
+  [class*="col-"] {
+    position: relative;
+    &::before, &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: $desktop-gutter;
+      background-color: #ffa50078;
+      top: 0;
+      height: 100%;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+@mixin gutter($gutter) {
+  [class*="col-"] {
+    &::before, &::after {
+      width: $gutter;
+    }
+  }
+}
+
+.info-text {
+  padding: 30px 0 15px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 500;
+  b {
+    color: rgb(198, 27, 27);
+  }
+}
+
+h2.guide {
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 10px;
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: black;
+    border-radius: 50%;
+    left: 2px;
+    top: 11px;
+  }
+}
+
+p.sub {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.row {
+  strong {
+    font-size: 28px;
+  }
+}
+
+.color-guide {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    li {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 20px;
+      span {
+        width: 25px;
+        height: 15px;
+        margin-right:5px;
+        background-color: black;
+        border: 1px solid #e1e1e1;
+        box-sizing: border-box;
+        &.column {
+          background-color: rgba(255, 20, 25, 0.1);
+        }
+        &.margin {
+          background-color: rgba(0, 128, 16, 0.2);
+        }
+        &.gutter {
+          background-color: rgba(0, 20, 150, 0.1);
+        }
+        &.gutter2 {
+          background-color: rgba(255, 165, 0, 0.4705882353);
+        }
+      }
+    }
+  }
+}
+
+.show-grid {
+  position: relative;
+  min-height: 1400px;
+  z-index: 3;
+  &::after, &::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    z-index: -2;
+  }
+  &::before {
+    width: calc(100% - (#{$desktop-margin} * 2));
+    margin:0 auto;
+    background: linear-gradient(90deg,
+      rgba(0,20,150,0.1) #{$desktop-gutter},
+      rgba(255,20,25,0.1) #{$desktop-gutter},
+      rgba(255,20,25,0.1) calc( 100% - #{$desktop-gutter} ),
+      rgba(0,20,150,0.1) calc( 100% - #{$desktop-gutter} ),
+      rgba(0,20,150,0.1) 100%);
+    background-size: calc(100% / #{$desktop-column});
+  }
+  .grid-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    &::before, &::after {
+      display: block;
+      content: '';
+      height: 100%;
+      top: 0;
+      position: absolute;
+      width: $desktop-margin;
+      background-color: rgb(0 128 16 / 20%);
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+@mixin guide-reponsive($margin, $gutter, $column) {
+  .show-grid {
+    &::before {
+      width: calc(100% - (#{$margin} * 2));
+      margin:0 auto;
+      background: linear-gradient(90deg,
+        rgba(0,20,150,0.1) #{$gutter},
+        rgba(255,20,25,0.1) #{$gutter},
+        rgba(255,20,25,0.1) calc( 100% - #{$gutter} ),
+        rgba(0,20,150,0.1) calc( 100% - #{$gutter} ),
+        rgba(0,20,150,0.1) 100%);
+      background-size: calc(100% / #{$column});
+    }
+    .grid-background {
+      &::before, &::after {
+        width: $margin;
+        background-color: rgb(0 128 16 / 20%);
+      }
+    }
+  }
+  .grid-container, .grid-container-fluid {
+    padding: $margin;
+  }
+}
+
+
+// =====================================================================================
+// Media Query
+// =====================================================================================
+// Mobile
+@media (min-width: 1px) and (max-width: $screen-tablet) {
+  .row {
+    .col-m {
+      @for $i from 1 through $mobile-column {
+        &-#{$i} { @include col-m($i); }
+      }
+    }
+    .suffix-m {
+      @for $i from 1 through $column {
+        &-#{$i} { @include mr-($i); }
+      }
+    }
+    .prefix-m {
+      @for $i from 1 through $column {
+        &-#{$i} { @include ml-($i); }
+      }
+    }
+  }
+  @include col-gutter($mobile-gutter);
+
+  // (추후 삭제) 그리드 배경 mixin
+  @include guide-reponsive($mobile-margin, $mobile-gutter, $mobile-column);
+  @include gutter($mobile-gutter);
+}
+
+// Tablet
+@media (min-width: ($screen-tablet + 1)) and (max-width: $screen-desktop) {
+  .row {
+    .col-t {
+      @for $i from 1 through $tablet-column {
+        &-#{$i} { @include col-t($i); }
+      }
+    }
+    .suffix-t {
+      @for $i from 1 through $column {
+        &-#{$i} { @include mr-($i); }
+      }
+    }
+    .prefix-t {
+      @for $i from 1 through $column {
+        &-#{$i} { @include ml-($i); }
+      }
+    }
+  }
+  @include col-gutter($tablet-gutter);
+
+  // (추후 삭제) 그리드 배경 mixin
+  @include guide-reponsive($tablet-margin, $tablet-gutter, $tablet-column);
+  @include gutter($tablet-gutter);
+}
+
+// DeskTop
+@media (min-width: ($screen-desktop + 1)) and (max-width: $screen-wide) {
+  .row {
+    .col-d {
+      @for $i from 1 through $desktop-column {
+        &-#{$i} { @include col-d($i); }
+      }
+    }
+    .suffix-d {
+      @for $i from 1 through $column {
+        &-#{$i} { @include mr-($i); }
+      }
+    }
+    .prefix-d {
+      @for $i from 1 through $column {
+        &-#{$i} { @include ml-($i); }
+      }
+    }
+  }
+  @include col-gutter($desktop-gutter);
+
+  // (추후 삭제) 그리드 배경 mixin
+  @include guide-reponsive($desktop-margin, $desktop-gutter, $desktop-column);
+  @include gutter($desktop-gutter);
+}
+
+// Wide
+@media (min-width: ($screen-wide + 1)) {
+  .row {
+    .col-w {
+      @for $i from 1 through $wide-column {
+        &-#{$i} { @include col-w($i); }
+      }
+    }
+    .suffix-w {
+      @for $i from 1 through $column {
+        &-#{$i} { @include mr-($i); }
+      }
+    }
+    .prefix-w {
+      @for $i from 1 through $column {
+        &-#{$i} { @include ml-($i); }
+      }
+    }
+  }
+  @include col-gutter($wide-gutter);
+
+  // (추후 삭제) 그리드 배경 mixin
+  @include guide-reponsive($wide-margin, $wide-gutter, $wide-column);
+  @include gutter($wide-gutter);
+}

@@ -1,0 +1,56 @@
+// =====================================================================================
+// Variable
+// =====================================================================================
+
+$tab-font-size: 12px;
+$tab-edition-font-size: 10px;
+$tab-title-scale: 1.2;
+$tab-line-height: 1.3;
+
+// tab font scale
+$tab-small: $tab-font-size;
+$tab-medium: round($tab-small * $tab-title-scale);
+$tab-large: round($tab-medium * $tab-title-scale);
+$tab-edition-small: $tab-edition-font-size;
+$tab-edition-medium: round($tab-edition-small * $tab-title-scale);
+$tab-edition-large: round($tab-edition-medium * $tab-title-scale);
+
+
+// =====================================================================================
+// MixIn
+// =====================================================================================
+
+//tab font size
+@mixin tab-font-size($name, $size) {
+  &.is-font-#{$name} {
+    .tab-menu-item {
+      font-size: #{$size};
+    }
+  }
+}
+
+//tab gap bar size
+@mixin tab-bar-size($name, $size) {
+  &.is-bar-#{$name} {
+    .tab-menu-item {
+      &::after {
+        height: #{$size} + "px";
+      }
+    }
+  }
+}
+
+//tab point color
+@mixin tab-point-color($name, $color) {
+  &.is-#{$name} {
+    .tab-menu-item {
+      &.is-active {
+        color: #{$color};
+        border-bottom: 2px solid #{$color};
+      }
+      &:hover {
+        color: #{$color};
+      }
+    }
+  }
+}

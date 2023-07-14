@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+
+  &-input {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    background-color: transparent;
+    appearance: none;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px solid $default-gray-medium;
+
+    &:hover {
+      border-color: $default-gray-medium-dark;
+      outline: none;
+    }
+
+    &:checked {
+      border-color: $default-point;
+    }
+
+    &:checked + .checkbox-label path {
+      fill: $default-point;
+    }
+
+    &:checked:disabled {
+      cursor: not-allowed;
+      border-color: $point-gray-light;
+    }
+
+    &:checked:disabled + .checkbox-label path {
+      fill: $default-gray-light !important;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $point-gray-light;
+    }
+
+    &:disabled + .checkbox-label::before {
+      background-color: #F5F5F5;
+    }
+  }
+
+  &-label {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: $default-black;
+    cursor: pointer;
+  }
+
+  &-label::before {
+    position: relative;
+    top: 0;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 14px;
+    height: 14px;
+    // background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  &-icon {
+    position: absolute;
+    left: 0;
+    top: 3px;
+  }
+
+  &.is- {
+    &all-check {
+      .checkbox-input {
+        &:checked {
+          + .checkbox-label::before {
+            background-color: $point-white;
+          }
+        }
+      }
+    }
+    &minus {
+      .checkbox-label {
+        &::before {
+          background-color: $point-white;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 3px;
+          top: 50%;
+          width: 8px;
+          height: 2px;
+          background-color: $default-point;
+        }
+      }
+      .checkbox-icon {
+        display: none;
+      }
+    }
+    &thin {
+      .checkbox-label {
+        &::before {
+          border-width: 1px;
+        }
+      }
+    }
+    &normal {
+      .checkbox-label {
+        &::before {
+          border-width: 2px;
+        }
+      }
+    }
+    &bold {
+      .checkbox-label {
+        &::before {
+          border-width: 3px;
+        }
+      }
+    }
+  }
+
+  &.s- {
+    &required {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: #FF0000;
+      margin-right: 3px;
+    }
+  }
+}

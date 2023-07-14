@@ -1,0 +1,33 @@
+.paragraph {
+  &-wrap {
+    line-height: $paragraph-line-height;
+    color: #666;
+    &.is {
+      &-light {
+        font-weight: 300;
+      }
+      &-regular {
+        font-weight: 400;
+      }
+      &-medium {
+        font-weight: 500;
+      }
+      &-bold {
+        font-weight: 700;
+      }
+      &-extra-bold {
+        font-weight: 900;
+      }
+      @each $name, $color in $color-chip {
+        &-color-#{$name} {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  @include paragraph-font-size("default");
+  @include paragraph-font-size("small");
+  @include paragraph-font-size("medium");
+  @include paragraph-font-size("large");
+}

@@ -1,0 +1,32 @@
+@import '../lib/sprite';
+@import 'mixins/sprite-retina';
+
+/* icon에 있는 파일명으로 변수명 지정 */
+$sprite: (
+	profile: $icon-profile,
+	favorite: $icon-favorite-on,
+	warning: $icon-warning,
+	vip: $icon-vip,
+	money: $icon-money-on,
+	memo: $icon-memo-on
+);
+
+.retina {
+  @each $key, $icon in $sprite {
+    &-1x-#{$key} {
+      @include sprite($icon);
+      @include sprite-retina($icon, 3);
+      display: inline-block;
+    }
+    &-2x-#{$key} {
+      @include sprite($icon);
+      @include sprite-retina($icon, 2);
+      display: inline-block;
+    }
+    &-3x-#{$key} {
+      @include sprite($icon);
+      @include sprite-retina($icon, 1);
+      display: inline-block;
+    }
+  }
+}

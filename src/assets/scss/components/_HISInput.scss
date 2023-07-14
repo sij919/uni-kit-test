@@ -1,0 +1,68 @@
+.input {
+  position: relative;
+  &-subject {
+    display: inline-block;
+  }
+  &-outline {
+    position: relative;
+    display: block;
+    border: 1px solid $gray200;
+    padding: 8px 24px 8px 12px;
+    border-radius: 4px;
+    &.is-focus {
+      border-color: $gray400;
+    }
+  }
+  &-label {
+    font-size: 14px;
+    color: $black;
+  }
+  &-element {
+    width: 100%;
+    font-size: 12px;
+    color: $gray400;
+  }
+  &-validate {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  &.is-{
+    &success {
+      .input-outline {
+        border-color: $green;
+      }
+      .input-label {
+        color: $green;
+      }
+      // .input-validator {
+      //   background: $green;
+      // }
+    }
+    &warning {
+      .input-outline {
+        border-color: $warning;
+      }
+      .input-label {
+        color: $warning;
+      }
+      // .input-validator {
+      //   background: $warning;
+      // }
+    }
+    &error {
+      .input-outline {
+        border-color: $error;
+      }
+      .input-label {
+        color: $error;
+      }
+      // .input-validator {
+      //   background: $error;
+      // }
+    }
+  }
+}

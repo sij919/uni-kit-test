@@ -1,0 +1,208 @@
+/////// TOOLS //////////////////////////
+$font-color: #3e3e3e;
+$baseline: 10px;
+$line-ratio: 1.5;
+$layout-font-size: $global-font-size * 1.3;
+$gird-line-color: #333;
+$grid-guide-colors:(
+  column: #ff1419,
+  margin: #ffa500,
+  gutter: #001496
+);
+
+//WideDesktop
+$desktop-wide:(
+  width: 1920px,
+  column: 16,
+  margin: 40px,
+  gutter: 12px
+);
+//StandardDesktop
+$desktop-standard:(
+  width: 1360px,
+  column: 12,
+  margin: 30px,
+  gutter: 10px
+);
+//Tablet
+$tablet:(
+  width: 960px,
+  column: 8,
+  margin: 20px,
+  gutter: 8px
+);
+//Mobile
+$mobile:(
+  width: 480px,
+  column: 4,
+  margin: 15px,
+  gutter: 6px
+);
+
+// Media Query
+@mixin media-query($breakpoint) {
+  @media screen and (max-width: map-get($breakpoint, width)) {
+    .grid {
+      &-wrap {
+        margin: 0 map-get($breakpoint, margin) ($baseline * 2);
+        &:before, &:after {
+          width: map-get($breakpoint, margin);
+        }
+        &:before {
+          left: -(map-get($breakpoint, margin));
+        }
+        &:after {
+          right: -(map-get($breakpoint, margin));
+        }
+      } //end_grid-wrap
+      &-show {
+        @include grid-rule($breakpoint);
+      } //end_grid-show
+      &-container-wrap {
+        grid-template-columns: repeat( map-get($breakpoint, column), 1fr);
+        grid-template-rows: repeat(10, 80px + calc(map-get($breakpoint, gutter) / 2));
+      }
+      &-has-gap {
+        padding: calc(map-get($breakpoint, gutter) / 2);
+      }
+      @include unit-position-count(column, map-get($breakpoint, column));
+    }
+    @content;
+  }
+}
+
+// 그리드 스타일 제어
+@mixin grid-rule($grid-type) {
+  $grid-column-color: map-get($grid-guide-colors, column);
+  $grid-gutter-color: map-get($grid-guide-colors, gutter);
+  $grid-gutter-gap: calc(map-get($grid-type, gutter) / 2);
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, transparentize($grid-gutter-color, 0.9) $grid-gutter-gap, transparentize($grid-column-color, 0.9) $grid-gutter-gap, transparentize($grid-column-color, 0.9) calc( 100% - #{$grid-gutter-gap} ), transparentize($grid-gutter-color, 0.9) $grid-gutter-gap);
+    background-size: calc(100% / #{map-get($grid-type, column)});
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(transparentize($grid-gutter-color, 0.9) $grid-gutter-gap, transparentize($grid-column-color, 0.9) $grid-gutter-gap, transparentize($grid-column-color, 0.9) 80px, transparentize($grid-gutter-color, 0.9) $grid-gutter-gap);
+    background-size: 1px (80px + $grid-gutter-gap);
+  }
+}
+
+//그리드 위치 조정
+@mixin unit-position-count($name, $count) {
+  @for $i from 1 through ($count + 1) { //position
+    @for $j from 1 through (($count + 1) - $i) { //count
+      &-#{$name}-#{$i}start-#{$j}end {
+        grid-#{$name}-start: $i;
+        grid-#{$name}-end: $i + $j;
+      }
+    }
+  }
+}
+
+/////// RESET //////////////////////////
+* { box-sizing: border-box; font-family: $global-font-family; font-size: $layout-font-size; line-height: $global-line-height;}
+html, body { height: 100%; margin: 0; padding: 0; }
+ul, li { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; }
+
+/////// MAIN //////////////////////////
+.guide {
+  &-infomation {
+    padding: 15px;
+  }
+  &-grid-calculation {
+    font-size: 14px;
+    color: #666;
+    .title {
+      padding-right: 10px;
+      font-weight: bold;
+      color: #8b9bff;
+    }
+  }
+  &-color {
+    padding-top: 15px;
+    display: flex;
+    .color-chip {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      &:before {
+        content: '';
+        width: 30px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      @each $name, $color in $grid-guide-colors {
+        &.#{$name} {
+          &:before {
+            background-color: rgba($color, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+.grid {
+  &-wrap {
+    position: relative;
+    margin: 0 map-get($desktop-wide, margin) ($baseline * 2);
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: map-get($desktop-wide, margin);
+      height: 100%;
+      top: 0;
+      background: rgba(map-get($grid-guide-colors, margin), 0.2);
+    }
+    &:before {
+      left: -(map-get($desktop-wide, margin));
+    }
+    &:after {
+      right: -(map-get($desktop-wide, margin));
+    }
+  } //end_grid-wrap
+  &-line {
+    background: linear-gradient(transparent ($baseline - 1), transparentize($gird-line-color, 0.9) ($baseline - 1));
+    background-size: 1px $baseline;
+  } //end_grid-line
+  &-show {
+    @include grid-rule($desktop-wide);
+  } //end_grid-show
+  &-container-wrap {
+    display: grid;
+    grid-template-columns: repeat( map-get($desktop-wide, column), 1fr );
+    grid-template-rows: repeat( 10, 80px + calc(map-get($desktop-wide, gutter) / 2) );
+  }
+  &-unit {
+    .inner {
+      height: 100%;
+      background: rgba(yellow, 0.1);
+      border: 1px solid #999;
+    }
+  }
+  &-has-gap {
+    padding: calc(map-get($desktop-wide, gutter) / 2);
+  }
+
+  @include unit-position-count(column, map-get($desktop-wide, column));
+  @include unit-position-count(row, 10);
+}
+
+/** responsive web */
+@include media-query($desktop-standard);
+@include media-query($tablet);
+@include media-query($mobile);

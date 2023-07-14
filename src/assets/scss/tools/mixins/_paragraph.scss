@@ -1,0 +1,31 @@
+$paragraph-line-height: 1.5;
+$paragraph-font-size: $global-font-size * 1.6;
+
+$paragraph-font-small: round($paragraph-font-size * 0.75);
+$paragraph-font-medium: round($paragraph-font-size * 1.13);
+$paragraph-font-large: round($paragraph-font-size * 1.25);
+
+@mixin paragraph-font-size($name) {
+  $mixin-font-size: $paragraph-font-size;
+  @if($name == "small") {
+    $mixin-font-size: $paragraph-font-small;
+  } @else if($name == "medium") {
+    $mixin-font-size: $paragraph-font-medium;
+  } @else if($name == "large") {
+    $mixin-font-size: $paragraph-font-large;
+  }
+  &-wrap {
+    &.is {
+      &-size-#{$name} {
+        font-size: $mixin-font-size;
+        padding-top: round(calc(($mixin-font-size * $paragraph-line-height) / 2));
+        &.is-paragraph-rhythm {
+          &:hover {
+            background: linear-gradient(transparent (calc(($mixin-font-size * $paragraph-line-height) / 2) - 1), #ddd (calc(($mixin-font-size * $paragraph-line-height) / 2) - 1));
+            background-size: 1px calc(($mixin-font-size * $paragraph-line-height) / 2);
+          }
+        }
+      }
+    }
+  }
+}

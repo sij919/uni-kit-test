@@ -1,0 +1,274 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$icon-favorite-on-name: 'icon-favorite-on';
+$icon-favorite-on-x: 0px;
+$icon-favorite-on-y: 0px;
+$icon-favorite-on-offset-x: 0px;
+$icon-favorite-on-offset-y: 0px;
+$icon-favorite-on-width: 18px;
+$icon-favorite-on-height: 18px;
+$icon-favorite-on-total-width: 54px;
+$icon-favorite-on-total-height: 36px;
+$icon-favorite-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-favorite-on: (0px, 0px, 0px, 0px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-favorite-on', );
+$icon-memo-on-name: 'icon-memo-on';
+$icon-memo-on-x: 18px;
+$icon-memo-on-y: 0px;
+$icon-memo-on-offset-x: -18px;
+$icon-memo-on-offset-y: 0px;
+$icon-memo-on-width: 18px;
+$icon-memo-on-height: 18px;
+$icon-memo-on-total-width: 54px;
+$icon-memo-on-total-height: 36px;
+$icon-memo-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-memo-on: (18px, 0px, -18px, 0px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-memo-on', );
+$icon-money-on-name: 'icon-money-on';
+$icon-money-on-x: 0px;
+$icon-money-on-y: 18px;
+$icon-money-on-offset-x: 0px;
+$icon-money-on-offset-y: -18px;
+$icon-money-on-width: 18px;
+$icon-money-on-height: 18px;
+$icon-money-on-total-width: 54px;
+$icon-money-on-total-height: 36px;
+$icon-money-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-money-on: (0px, 18px, 0px, -18px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-money-on', );
+$icon-profile-name: 'icon-profile';
+$icon-profile-x: 18px;
+$icon-profile-y: 18px;
+$icon-profile-offset-x: -18px;
+$icon-profile-offset-y: -18px;
+$icon-profile-width: 18px;
+$icon-profile-height: 18px;
+$icon-profile-total-width: 54px;
+$icon-profile-total-height: 36px;
+$icon-profile-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-profile: (18px, 18px, -18px, -18px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-profile', );
+$icon-vip-name: 'icon-vip';
+$icon-vip-x: 36px;
+$icon-vip-y: 0px;
+$icon-vip-offset-x: -36px;
+$icon-vip-offset-y: 0px;
+$icon-vip-width: 18px;
+$icon-vip-height: 18px;
+$icon-vip-total-width: 54px;
+$icon-vip-total-height: 36px;
+$icon-vip-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-vip: (36px, 0px, -36px, 0px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-vip', );
+$icon-warning-name: 'icon-warning';
+$icon-warning-x: 36px;
+$icon-warning-y: 18px;
+$icon-warning-offset-x: -36px;
+$icon-warning-offset-y: -18px;
+$icon-warning-width: 18px;
+$icon-warning-height: 18px;
+$icon-warning-total-width: 54px;
+$icon-warning-total-height: 36px;
+$icon-warning-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$icon-warning: (36px, 18px, -36px, -18px, 18px, 18px, 54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', 'icon-warning', );
+$retina-icon-favorite-on-name: 'retina_icon-favorite-on';
+$retina-icon-favorite-on-x: 0px;
+$retina-icon-favorite-on-y: 0px;
+$retina-icon-favorite-on-offset-x: 0px;
+$retina-icon-favorite-on-offset-y: 0px;
+$retina-icon-favorite-on-width: 36px;
+$retina-icon-favorite-on-height: 36px;
+$retina-icon-favorite-on-total-width: 108px;
+$retina-icon-favorite-on-total-height: 72px;
+$retina-icon-favorite-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-favorite-on: (0px, 0px, 0px, 0px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-favorite-on', );
+$retina-icon-memo-on-name: 'retina_icon-memo-on';
+$retina-icon-memo-on-x: 36px;
+$retina-icon-memo-on-y: 0px;
+$retina-icon-memo-on-offset-x: -36px;
+$retina-icon-memo-on-offset-y: 0px;
+$retina-icon-memo-on-width: 36px;
+$retina-icon-memo-on-height: 36px;
+$retina-icon-memo-on-total-width: 108px;
+$retina-icon-memo-on-total-height: 72px;
+$retina-icon-memo-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-memo-on: (36px, 0px, -36px, 0px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-memo-on', );
+$retina-icon-money-on-name: 'retina_icon-money-on';
+$retina-icon-money-on-x: 0px;
+$retina-icon-money-on-y: 36px;
+$retina-icon-money-on-offset-x: 0px;
+$retina-icon-money-on-offset-y: -36px;
+$retina-icon-money-on-width: 36px;
+$retina-icon-money-on-height: 36px;
+$retina-icon-money-on-total-width: 108px;
+$retina-icon-money-on-total-height: 72px;
+$retina-icon-money-on-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-money-on: (0px, 36px, 0px, -36px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-money-on', );
+$retina-icon-profile-name: 'retina_icon-profile';
+$retina-icon-profile-x: 36px;
+$retina-icon-profile-y: 36px;
+$retina-icon-profile-offset-x: -36px;
+$retina-icon-profile-offset-y: -36px;
+$retina-icon-profile-width: 36px;
+$retina-icon-profile-height: 36px;
+$retina-icon-profile-total-width: 108px;
+$retina-icon-profile-total-height: 72px;
+$retina-icon-profile-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-profile: (36px, 36px, -36px, -36px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-profile', );
+$retina-icon-vip-name: 'retina_icon-vip';
+$retina-icon-vip-x: 72px;
+$retina-icon-vip-y: 0px;
+$retina-icon-vip-offset-x: -72px;
+$retina-icon-vip-offset-y: 0px;
+$retina-icon-vip-width: 36px;
+$retina-icon-vip-height: 36px;
+$retina-icon-vip-total-width: 108px;
+$retina-icon-vip-total-height: 72px;
+$retina-icon-vip-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-vip: (72px, 0px, -72px, 0px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-vip', );
+$retina-icon-warning-name: 'retina_icon-warning';
+$retina-icon-warning-x: 72px;
+$retina-icon-warning-y: 36px;
+$retina-icon-warning-offset-x: -72px;
+$retina-icon-warning-offset-y: -36px;
+$retina-icon-warning-width: 36px;
+$retina-icon-warning-height: 36px;
+$retina-icon-warning-total-width: 108px;
+$retina-icon-warning-total-height: 72px;
+$retina-icon-warning-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-icon-warning: (72px, 36px, -72px, -36px, 36px, 36px, 108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', 'retina_icon-warning', );
+$spritesheet-width: 54px;
+$spritesheet-height: 36px;
+$spritesheet-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png';
+$spritesheet-sprites: ($icon-favorite-on, $icon-memo-on, $icon-money-on, $icon-profile, $icon-vip, $icon-warning, );
+$spritesheet: (54px, 36px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 108px;
+$retina-spritesheet-height: 72px;
+$retina-spritesheet-image: '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png';
+$retina-spritesheet-sprites: ($retina-icon-favorite-on, $retina-icon-memo-on, $retina-icon-money-on, $retina-icon-profile, $retina-icon-vip, $retina-icon-warning, );
+$retina-spritesheet: (108px, 72px, '/Users/judyleems/Desktop/Project/UIKIT/his-ui-kit/src/assets/images/common/sprite@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$icon-favorite-on-group-name: 'icon-favorite-on';
+$icon-favorite-on-group: ('icon-favorite-on', $icon-favorite-on, $retina-icon-favorite-on, );
+$icon-memo-on-group-name: 'icon-memo-on';
+$icon-memo-on-group: ('icon-memo-on', $icon-memo-on, $retina-icon-memo-on, );
+$icon-money-on-group-name: 'icon-money-on';
+$icon-money-on-group: ('icon-money-on', $icon-money-on, $retina-icon-money-on, );
+$icon-profile-group-name: 'icon-profile';
+$icon-profile-group: ('icon-profile', $icon-profile, $retina-icon-profile, );
+$icon-vip-group-name: 'icon-vip';
+$icon-vip-group: ('icon-vip', $icon-vip, $retina-icon-vip, );
+$icon-warning-group-name: 'icon-warning';
+$icon-warning-group: ('icon-warning', $icon-warning, $retina-icon-warning, );
+$retina-groups: ($icon-favorite-on-group, $icon-memo-on-group, $icon-money-on-group, $icon-profile-group, $icon-vip-group, $icon-warning-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

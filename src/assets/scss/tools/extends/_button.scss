@@ -1,0 +1,81 @@
+%default-create-style {
+  background-color: $btn-default-create;
+  border: 1px solid $point-gray-light;
+  color: $point-gray-dark;
+}
+
+%over-create-style {
+  background-color: $btn-over-create;
+  border: 1px solid $point-blue-medium;
+  color: $point-blue-medium;
+  outline: none;
+}
+
+%click-create-style {
+  background-color: $btn-click-create;
+  border: 1px solid $point-gray-light;
+  color: $point-gray-dark;
+}
+
+%default-read-style {
+  background-color: $btn-default-read;
+  border: 0;
+  color: $point-blue-light;
+}
+
+%over-read-style {
+  background-color: $btn-over-read;
+  border: 0;
+  color: $point-blue-dark;
+  outline: none;
+}
+
+%click-read-style {
+  background-color: $btn-click-read;
+  border: 0;
+  color: $point-blue-dark;
+}
+
+%default-update-style {
+  background-color: $btn-default-update;
+  border: 0;
+  color: $point-white;
+}
+
+%over-update-style {
+  background-color: $btn-over-update;
+  border: 0;
+  color: $point-white;
+  outline: none;
+}
+
+%click-update-style {
+  background-color: $btn-click-update;
+  border: 0;
+  color: $point-white;
+}
+
+%default-delete-style {
+  background-color: $btn-default-delete;
+  border: 0;
+  color: $point-white;
+}
+
+%over-delete-style {
+  background-color: $btn-over-delete;
+  border: 0;
+  color: $point-white;
+  outline: none;
+}
+
+%click-delete-style {
+  background-color: $btn-click-delete;
+  border: 0;
+  color: $point-white;
+}
+
+%disable-style {
+  background-color: $btn-disable;
+  border: 0;
+  color: $point-gray-medium;
+}

@@ -1,0 +1,92 @@
+.tab {
+  &-menu {
+    display: flex;
+    &.is-tab-edition {
+      .tab-menu-item {
+        padding: 5px 10px;
+        font-size: $tab-edition-medium;
+        &::after { //tab-bar
+          height: 12px;
+        }
+        &.is-active {
+          border-bottom: 2px solid transparent !important;
+        }
+      }
+      // menu style custom
+      @include tab-font-size("small", $tab-edition-small);
+      @include tab-font-size("large", $tab-edition-large);
+      @include tab-bar-size("small", 10);
+      @include tab-bar-size("medium", 12);
+      @include tab-bar-size("large", 14);
+    }
+    .tab-menu-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 5px 14px;
+      font-size: $tab-medium;
+      border-bottom: 2px solid transparent;
+      word-break: break-word;
+      box-sizing: border-box;
+      &:hover {
+        color: #1B8FFB;
+      }
+      &::after { //tab-bar
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -1px;
+        width: 2px;
+        transform: translateY(-50%);
+        background-color: #e8e8e8;
+      }
+      &:last-child {
+        &::after { //tab-bar
+          content: none;
+        }
+      }
+      &.is-active {
+        color: #1b8ffb;
+        font-weight: bold;
+        border-bottom: 2px solid #1b8ffb;
+      }
+      &.is-max-width {
+        .tooltip {
+          width: 100%;
+          .tooltip-content {
+            font-weight: normal;
+          }
+        }
+        .ellipsis {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    &.is-divided-width {
+      .tab-menu-item {
+        justify-content: center;
+        flex: 1;
+      }
+    }
+
+    // menu style custom
+    @include tab-font-size("small", $tab-small);
+    @include tab-font-size("large", $tab-large);
+    @include tab-bar-size("small", 12);
+    @include tab-bar-size("medium", 15);
+    @include tab-bar-size("large", 18);
+    @include tab-point-color("green", #008000);
+    @include tab-point-color("orange", #ffa500);
+    @include tab-point-color("pink", #ff98aa);
+  }
+  &-panel {
+    border: 1px solid #e5e5e5;
+    border-top: 2px solid #5d5d5d;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+  }
+}

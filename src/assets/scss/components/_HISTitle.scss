@@ -1,0 +1,95 @@
+// =====================================================================================
+// 사이즈 변수
+// =====================================================================================
+$scale: 1.25;
+$h6: 16px;
+$h5: ceil($h6 * $scale);
+$h4: ceil($h5 * $scale);
+$h3: ceil($h4 * $scale);
+$h2: ceil($h3 * $scale);
+$h1: ceil($h2 * $scale);
+
+// =====================================================================================
+// MIXIN
+// =====================================================================================
+@mixin font-size-title($size) {
+  font-size: $size;
+}
+
+// =====================================================================================
+// Extend
+// =====================================================================================
+.title-basic {
+  position: relative;
+  letter-spacing: -0.05em;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 500;
+}
+
+.title-basic-sub {
+  margin-left: 15px;
+  line-height: 1.5;
+  color: gray;
+  font-weight: 400;
+}
+
+// =====================================================================================
+// STYLE
+// =====================================================================================
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+
+.is- {
+  &page {
+    .title-h1 {
+      @include font-size-title($h1);
+      @extend .title-basic;
+    }
+    .title-h2 {
+      @include font-size-title($h2);
+      @extend .title-basic;
+    }
+    .title-h3 {
+      @include font-size-title($h3);
+      @extend .title-basic;
+    }
+    .title-h4 {
+      @include font-size-title($h4);
+      @extend .title-basic;
+    }
+    .title-h5 {
+      @include font-size-title($h5);
+      @extend .title-basic;
+    }
+    .title-h6 {
+      @include font-size-title($h6);
+      @extend .title-basic;
+    }
+  }
+  &popup {
+    .title-h1 {
+      @include font-size-title($h3);
+      @extend .title-basic;
+    }
+    .title-h2 {
+      @include font-size-title($h4);
+      @extend .title-basic;
+    }
+    .title-h3 {
+      @include font-size-title($h5);
+      @extend .title-basic;
+    }
+    .title-h4 {
+      @include font-size-title($h6);
+      @extend .title-basic;
+    }
+  }
+}
+
+.sub-title {
+  @extend .title-basic-sub;
+}

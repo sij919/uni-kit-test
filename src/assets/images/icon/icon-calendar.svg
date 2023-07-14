@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3174" data-name="사각형 3174" width="18" height="18" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_7682" data-name="그룹 7682" clip-path="url(#clip-path)">
+    <path id="패스_3520" data-name="패스 3520" d="M15,3H14V2H12V3H6V2H4V3H3A1,1,0,0,0,2,4V15a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V4a1,1,0,0,0-1-1m0,12H3V6H15Z" fill="#7b7b7b"/>
+    <rect id="사각형_3168" data-name="사각형 3168" width="2" height="2" transform="translate(5 8)" fill="#7b7b7b"/>
+    <rect id="사각형_3169" data-name="사각형 3169" width="2" height="2" transform="translate(8 8)" fill="#7b7b7b"/>
+    <rect id="사각형_3170" data-name="사각형 3170" width="2" height="2" transform="translate(11 8)" fill="#7b7b7b"/>
+    <rect id="사각형_3171" data-name="사각형 3171" width="2" height="2" transform="translate(5 11)" fill="#7b7b7b"/>
+    <rect id="사각형_3172" data-name="사각형 3172" width="2" height="2" transform="translate(8 11)" fill="#7b7b7b"/>
+    <rect id="사각형_3173" data-name="사각형 3173" width="2" height="2" transform="translate(11 11)" fill="#7b7b7b"/>
+  </g>
+</svg>
