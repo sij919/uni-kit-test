@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+.vscode
+package-lock.json
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# node 가상 환경
+/env-18.14.2
+
+# sprite
+src/assets/scss/lib/_sprite.scss
+
+# fontagon
+src/assets/iconfont/**

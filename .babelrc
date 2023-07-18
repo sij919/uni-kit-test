@@ -1,0 +1,11 @@
+{
+  "presets": ["@babel/env", "@babel/preset-react"],
+  "plugins": [
+    ["prismjs", {
+        "languages": ["markup", "html", "xml", "svg", "mathml", "ssml", "atom", "rss", "css", "clike", "javascript", "js", "sass", "scss", "css-extras", "jsx", "tsx", "typescript", "ts", "bash", "sh", "shell", "git"],
+        "plugins": ["copy-to-clipboard"],
+        "theme": "tomorrow", // coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
+        "css": true
+    }]
+  ]
+}
